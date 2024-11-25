@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battery</title>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* تنظیمات کلی صفحه */
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background: #1a0734; /* رنگ پس‌زمینه */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1; /* افکت ذرات در لایه پایین‌تر */
+    }
+
+    /* استایل کارت شیشه‌ای */
+    .glass-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 800px; /* عرض کارت */
+      height: 300px; /* ارتفاع کارت */
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1); /* شفافیت کارت */
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+      backdrop-filter: blur(10px); /* افکت بلر */
+      -webkit-backdrop-filter: blur(10px); /* بلر در مرورگرهای وب‌کیت */
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: white;
+      position: relative; /* تنظیم لایه */
+      z-index: 10; /* لایه بالاتر */
+    }
+
+    /* متن داخل کارت */
+    .glass-card .content {
+      flex: 1; /* فضای متن */
+      margin-left: 20px;
+    }
+
+    .glass-card h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .glass-card p {
+      font-size: 1em;
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
+    /* استایل گیف */
+    .glass-card .gif-container {
+      flex-shrink: 0; /* جلوگیری از تغییر اندازه */
+      width: 200px;
+      height: 200px;
+      order: -1; /* انتقال گیف به سمت چپ */
+      margin-right: 20px;
+    }
+
+    .glass-card .gif-container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px; /* گوشه‌های گیف */
+    }
+
+    /* استایل دکمه گرد */
+    .glass-card .btn-container a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px; /* عرض دکمه */
+      height: 50px; /* ارتفاع دکمه */
+      border-radius: 50%; /* گرد کردن */
+      background-color: white; /* رنگ پس‌زمینه دکمه */
+      color: #1a0734; /* رنگ آیکون */
+      text-decoration: none;
+      font-size: 1.5em; /* اندازه آیکون */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      cursor: pointer; /* اشاره‌گر ماوس */
+    }
+
+    /* تغییر رنگ هنگام هاور */
+    .glass-card .btn-container a:hover {
+      background-color: #0077b5; /* رنگ آبی */
+      color: white; /* رنگ آیکون */
+      box-shadow: 0 6px 15px rgba(0, 119, 181, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <!-- افکت ذرات -->
+  <div id="particles-js"></div>
+
+  <!-- کارت شیشه‌ای افقی -->
+  <div class="glass-card">
+    <!-- گیف کنار متن -->
+    <div class="gif-container">
+      <img src="logo.gif" alt="GIF">
+    </div>
+    <!-- متن درون کارت -->
+    <div class="content">
+      <h1>Battery</h1>
+      <p>Hello! I am Battery.</p>
+      <p>I'm a software developer! My skill is C#, Flutter, PHP, C/C++..:)</p>
+      <h1>Contact Me</h1>
+      <div class="btn-container">
+        <!-- لینک تلگرام -->
+        <a href="tg://resolve?domain=battery_off&text=سلام، وقتتون بخیر" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-telegram-plane"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: "#ffffff"
+        },
+        shape: {
+          type: "circle"
+        },
+        opacity: {
+          value: 0.5,
+          random: false
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          attract: {
+            enable: false
+          }
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          },
+          onclick: {
+            enable: true,
+            mode: "push"
+          }
+        },
+        modes: {
+          repulse: {
+            distance: 100,
+            duration: 0.4
+          }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
